@@ -1,18 +1,23 @@
 /* eslint-disable */
+require("dotenv").config();
 const withLess = require('@zeit/next-less');
-const lessToJS = require('less-vars-to-js');
-const fs = require('fs');
-const path = require('path');
+
+// ENABLE FOR STATIC CUSTOM
+// const lessToJS = require('less-vars-to-js');
+// const fs = require('fs');
+// const path = require('path');
 
 // Where your antd-custom.less file lives
-const themeVariables = lessToJS(
-  fs.readFileSync(path.resolve(__dirname, './assets/antd-custom.less'), 'utf8')
-);
+// const themeVariables = lessToJS(
+//   fs.readFileSync(path.resolve(__dirname, './assets/antd-custom.less'), 'utf8')
+// );
 
 module.exports = withLess({
   lessLoaderOptions: {
     javascriptEnabled: true,
-    modifyVars: themeVariables, // make your antd custom effective
+    modifyVars: {
+      "@primary-color": process.env.PRIMARY_COLOR,
+    }, // make your antd custom effective
   },
   webpack: (config, { isServer }) => {
     if (isServer) {
