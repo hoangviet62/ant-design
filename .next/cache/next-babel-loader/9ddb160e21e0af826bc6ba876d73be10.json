@@ -1,0 +1,1 @@
+{"ast":null,"code":"import Sidebar from \"./Sidebar\";\nexport { Sidebar };","map":{"version":3,"sources":["/Users/viet.nguyen/WebstormProjects/ant-design/pages/layouts/index.js"],"names":["Sidebar"],"mappings":"AAAA,OAAOA,OAAP,MAAoB,WAApB;AACA,SACEA,OADF","sourcesContent":["import Sidebar from \"./Sidebar\";\nexport {\n  Sidebar\n};\n"]},"metadata":{},"sourceType":"module"}
